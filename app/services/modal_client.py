@@ -50,7 +50,7 @@ class ModalClient:
         self._ensure_env()
         logger.info(f"Calling Modal mashup: bpm={target_bpm}, key={target_key}, dur={preview_duration}s")
 
-        fn = modal.Function.lookup("orryy-mashup", "generate_mashup_preview")
+        fn = modal.Function.from_name("orryy-mashup", "generate_mashup_preview")
         result = await asyncio.to_thread(
             fn.remote,
             track_a_url=track_a_url,
@@ -74,7 +74,7 @@ class ModalClient:
         self._ensure_env()
         logger.info(f"Calling Modal trackid for URL: {audio_url[:80]}...")
 
-        fn = modal.Function.lookup("orryy-trackid", "identify_track_remote")
+        fn = modal.Function.from_name("orryy-trackid", "identify_track_remote")
         result = await asyncio.to_thread(
             fn.remote,
             audio_url=audio_url,
