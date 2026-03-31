@@ -9,7 +9,7 @@ from app.services.storage import upload_file_to_r2, generate_presigned_url
 
 logger = logging.getLogger(__name__)
 
-DEMUCS_MODEL = "cjwbw/demucs:25a173108cff36ef9f80f854c162d01df9e6528be175794b81571f6c6c7b56f9"
+DEMUCS_MODEL = "cjwbw/demucs:25a173108cff36ef9f80f854c162d01df9e6528be175794b81158fa03836d953"
 
 
 async def run_stem_separation(
